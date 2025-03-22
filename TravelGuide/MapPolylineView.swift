@@ -33,7 +33,7 @@ struct MapPolylineView: UIViewRepresentable {
         
         let startCoordinate = CLLocationCoordinate2D(latitude: 42.485984063745754, longitude: -83.53735398714915) // Home
         let endCoordinate = CLLocationCoordinate2D(latitude: 42.48180223947649, longitude: -83.47077933339779) // Walmart
-        let endCoordinate2 = CLLocationCoordinate2D(latitude: 42.489293731285684, longitude: -83.50238818400035)
+        let endCoordinate2 = CLLocationCoordinate2D(latitude: 40.74844079761186, longitude: -73.98569849282397)
         
         // Add markers (annotations)
         let locations = [
