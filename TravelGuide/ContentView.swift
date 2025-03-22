@@ -5,6 +5,10 @@
 //  Created by Angad Kumar on 3/2/25.
 //
 
+
+//Hi this is Navya 
+//i love lady gaga
+
 import SwiftUI
 
 struct ContentView: View {
