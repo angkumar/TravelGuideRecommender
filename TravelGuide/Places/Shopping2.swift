@@ -11,28 +11,27 @@ import MapKit
 struct Shopping2: View {
     var body: some View {
         ScrollView {
-            Text("Walmart")
+            Text("Twelve Oaks Mall")
                 .font(.largeTitle)
                 .padding()
             
-            Text("This is the besst place in novi to buy groceries, clothes and so on.")
+            Text("This is the best place to waste thousands of dollars on anything you want/'need'")
             
-            Image("wm")
+            Image("tom")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .cornerRadius(20)
                 .frame(width: 400, height: 300)
             
-            Text("Walmart has everything you need, from food to gasoline, from clotes to ipads, and so on.")
+            Text("Twelve Oaks Mall is a shopping mall with over 180 stores which is located in Novi, Michigan, United States, a suburb of Detroit. The mall features anchor stores JCPenney, Macy's, and Nordstrom, with two vacant anchors previously Lord & Taylor and Sears")
 
             Map() {
-                Marker("WalMart", coordinate: CLLocationCoordinate2D(latitude: 42.48180223947649, longitude: -83.47077933339779))
+                Marker("Twele oaks Mall", coordinate: CLLocationCoordinate2D(latitude: 42.49188857396703, longitude :-83.47064573617806))
             }
             .frame(height: 300)
             .cornerRadius(20)
             .mapStyle(.hybrid)
             
-            Text("Here you want all your favourite places, like your bed, bathroom, kitchen and so on.")
         }
     }
 }

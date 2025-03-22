@@ -90,7 +90,7 @@ struct MainScreen: View {
                     Shopping1()
                 }
                 .navigationDestination(isPresented: $navigateToFifthPage) {
-                    FoodOG()
+                    Shopping2()
                 }
                 
                 
