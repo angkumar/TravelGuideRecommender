@@ -15,87 +15,89 @@ struct MainScreen: View {
     @State private var navigateToFifthPage = false
     
     var body: some View {
-        NavigationStack{
-            ScrollView {
-                VStack {
-                    Text("Go Home")
-                        .font(.title)
-                        .padding()
-                    
-                    Button(action: {
-                        navigateToSecondPage = true
-                    }) {
-                        Text("More details")
+        NavigationView {
+            NavigationStack{
+                ScrollView {
+                    VStack {
+                        Text("Go Home")
+                            .font(.title)
                             .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .clipShape(Capsule())
-                            .shadow(radius: 5)
+                        
+                        Button(action: {
+                            navigateToSecondPage = true
+                        }) {
+                            Text("More details")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .clipShape(Capsule())
+                                .shadow(radius: 5)
+                        }
                     }
-                }
-                .navigationTitle("Things to do in Novi!")
-                .navigationDestination(isPresented: $navigateToSecondPage) {
-                    Home()
-                }
-                VStack{
-                    Text("Go Eat")
-                        .font(.title)
-                        .padding()
-                    
-                    Button(action: {
-                        navigateToThirdPage = true
-                    }) {
-                        Text("More details")
+                    .navigationTitle("Things to do in Novi!")
+                    .navigationDestination(isPresented: $navigateToSecondPage) {
+                        Home()
+                    }
+                    VStack{
+                        Text("Go Eat")
+                            .font(.title)
                             .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .clipShape(Capsule())
-                            .shadow(radius: 5)
+                        
+                        Button(action: {
+                            navigateToThirdPage = true
+                        }) {
+                            Text("More details")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .clipShape(Capsule())
+                                .shadow(radius: 5)
+                        }
                     }
-                }
-                .navigationTitle("Things to do in Novi!")
-                .navigationDestination(isPresented: $navigateToThirdPage) {
-                    FoodOG()
-                    
-                    
-                }
-                VStack{
-                    Text("Go Shopping!")
-                        .font(.title)
-                        .padding()
-                    
-                    Button(action: {
-                        navigateToFourthPage = true
-                    }) {
-                        Text("Budget Shoping")
+                    .navigationTitle("Things to do in Novi!")
+                    .navigationDestination(isPresented: $navigateToThirdPage) {
+                        FoodOG()
+                        
+                        
+                    }
+                    VStack{
+                        Text("Go Shopping!")
+                            .font(.title)
                             .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .clipShape(Capsule())
-                            .shadow(radius: 5)
+                        
+                        Button(action: {
+                            navigateToFourthPage = true
+                        }) {
+                            Text("Budget Shoping")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .clipShape(Capsule())
+                                .shadow(radius: 5)
+                        }
+                        Button(action: {
+                            navigateToFifthPage = true
+                        }) {
+                            Text("If ur a Baller")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .clipShape(Capsule())
+                                .shadow(radius: 5)
+                        }
                     }
-                    Button(action: {
-                        navigateToFifthPage = true
-                    }) {
-                        Text("If ur a Baller")
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .clipShape(Capsule())
-                            .shadow(radius: 5)
+                    .navigationTitle("Things to do in Novi!")
+                    .navigationDestination(isPresented: $navigateToFourthPage) {
+                        Shopping1()
                     }
+                    .navigationDestination(isPresented: $navigateToFifthPage) {
+                        Shopping2()
+                    }
+                    
+                    
+                    
+                    
                 }
-                .navigationTitle("Things to do in Novi!")
-                .navigationDestination(isPresented: $navigateToFourthPage) {
-                    Shopping1()
-                }
-                .navigationDestination(isPresented: $navigateToFifthPage) {
-                    Shopping2()
-                }
-                
-                
-                
-                
             }
         }
     }

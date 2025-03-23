@@ -22,6 +22,10 @@ struct FirstView: View {
                 .tabItem {
                     Label("Test", systemImage: "map")
                 }
+            Options()
+                .tabItem {
+                    Label("Options", systemImage: "gear")
+                }
         }
     }
 }
