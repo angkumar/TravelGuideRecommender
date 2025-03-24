@@ -15,6 +15,10 @@ struct SidebarView: View {
         
         var body: some View {
             List {
+                
+                Text("Options")
+                    .font(.largeTitle)
+                
                 DisclosureGroup("Home", isExpanded: $homeExpanded) {
                     NavigationLink(destination: MainScreen()) {
                         Label("Dashboard", systemImage: "house.fill")

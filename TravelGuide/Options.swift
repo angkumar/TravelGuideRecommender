@@ -10,10 +10,10 @@ import SwiftUI
 struct Options: View {
     var body: some View {
         
-        NavigationView {
+        NavigationView{
             SidebarView()
-                    
         }
+    
     }
 }
 
