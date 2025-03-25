@@ -35,6 +35,8 @@ struct ContentView: View {
             .navigationDestination(isPresented: $mainPage) {
                 FirstView()
             }
+            
+            
         }
     }
 }

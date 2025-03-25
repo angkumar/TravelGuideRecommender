@@ -26,6 +26,10 @@ struct FirstView: View {
                 .tabItem {
                     Label("Options", systemImage: "gear")
                 }
+            LocationTracker()
+                .tabItem {
+                    Label("Location Tracker", systemImage: "location")
+                }
         }
     }
 }
