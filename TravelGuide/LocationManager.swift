@@ -11,20 +11,19 @@ import CoreLocation
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private var locationManager = CLLocationManager()
-    
-    @Published var latitude: Double? = nil
-    @Published var longitude: Double? = nil
-    @Published var authorizationStatus: CLAuthorizationStatus = .notDetermined
-    
-    override init() {
-        super.init()
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        @Published var latitude: Double = 0.0
+        @Published var longitude: Double = 0.0
+        @Published var authorizationStatus: CLAuthorizationStatus = .notDetermined
+        
+        override init() {
+            super.init()
+            self.locationManager.delegate = self
+            self.locationManager.requestWhenInUseAuthorization()
+            self.locationManager.startUpdatingLocation()
+        }
+        
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             guard let location = locations.last else { return }
             DispatchQueue.main.async {
                 self.latitude = location.coordinate.latitude
@@ -37,9 +36,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
                 self.authorizationStatus = status
                 if status == .authorizedWhenInUse || status == .authorizedAlways {
                     self.locationManager.startUpdatingLocation()
-                } else {
-                    self.latitude = nil
-                    self.longitude = nil
                 }
             }
         }

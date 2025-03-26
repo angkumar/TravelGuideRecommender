@@ -9,6 +9,8 @@ import SwiftUI
 import MapKit
 
 struct ShoppingMap: UIViewRepresentable {
+    @ObservedObject var locationManager: LocationManager  // Use an external instance
+    
     class Coordinator: NSObject, MKMapViewDelegate {
         var parent: ShoppingMap
         
@@ -16,7 +18,6 @@ struct ShoppingMap: UIViewRepresentable {
             self.parent = parent
         }
         
-        // Render polyline for real road route
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             if let polyline = overlay as? MKPolyline {
                 let renderer = MKPolylineRenderer(polyline: polyline)
@@ -35,13 +36,27 @@ struct ShoppingMap: UIViewRepresentable {
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
+        mapView.showsUserLocation = true
+        return mapView
+    }
+    
+    func updateUIView(_ mapView: MKMapView, context: Context) {
+        // Ensure we have valid user location
+        guard locationManager.latitude != 0.0, locationManager.longitude != 0.0 else {
+            print("Waiting for valid user location...")
+            return
+        }
         
-        let startCoordinate = CLLocationCoordinate2D(latitude: 42.485984063745754, longitude: -83.53735398714915) // Home
-        let endCoordinate = CLLocationCoordinate2D(latitude: 42.48180223947649, longitude: -83.47077933339779) // Walmart
+        let startCoordinate = CLLocationCoordinate2D(latitude: locationManager.latitude, longitude: locationManager.longitude)
+        let endCoordinate = CLLocationCoordinate2D(latitude: 42.48180223947649, longitude: -83.47077933339779) // Destination
         
-        // Add markers (annotations)
+        // Remove old overlays and annotations
+        mapView.removeOverlays(mapView.overlays)
+        mapView.removeAnnotations(mapView.annotations)
+        
+        // Add new markers (annotations)
         let locations = [
-            ("Walmart", endCoordinate),
+            ("WalMart", endCoordinate),
             ("Home", startCoordinate),
         ]
         
@@ -52,7 +67,7 @@ struct ShoppingMap: UIViewRepresentable {
             mapView.addAnnotation(annotation)
         }
         
-        // Request real road route
+        // Request route only if valid
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: startCoordinate))
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: endCoordinate))
@@ -60,20 +75,15 @@ struct ShoppingMap: UIViewRepresentable {
         
         let directions = MKDirections(request: request)
         directions.calculate { response, error in
-            if let route = response?.routes.first {
-                mapView.addOverlay(route.polyline)
-                
-                // Adjust map region to fit the route
-                mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50), animated: true)
+            guard let route = response?.routes.first else {
+                print("Error calculating route: \(error?.localizedDescription))")
+                return
             }
+            
+            mapView.addOverlay(route.polyline)
+            
+            // Adjust map region to fit the route
+            mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50), animated: true)
         }
-        
-        return mapView
     }
-    
-    func updateUIView(_ uiView: MKMapView, context: Context) {}
-}
-
-#Preview {
-    ShoppingMap()
 }

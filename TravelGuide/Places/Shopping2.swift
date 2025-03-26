@@ -33,7 +33,7 @@ struct Shopping2: View {
                 .cornerRadius(20)
                 .mapStyle(.hybrid)
                 
-                NavigationLink(destination: ShoppingMap2().edgesIgnoringSafeArea(.all)) {
+                NavigationLink(destination: ShoppingDirections2().edgesIgnoringSafeArea(.all)) {
                     Text("Click here for directions.")
                         .fontWeight(.heavy)
                         .font(.title3)

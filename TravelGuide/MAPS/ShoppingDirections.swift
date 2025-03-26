@@ -1,21 +1,20 @@
 //
-//  FoodOGMap2.swift
+//  ShoppingDirections.swift
 //  TravelGuide
 //
-//  Created by Angad Kumar on 3/22/25.
+//  Created by Angad Kumar on 3/25/25.
 //
-// im testing git pushing solo
 
 import SwiftUI
 
-struct FoodOGMap2: View {
+struct ShoppingDirections: View {
     @StateObject private var locationManager = LocationManager()
     var body: some View {
-        FoodOGMap(locationManager: locationManager)
+        ShoppingMap(locationManager: locationManager)
                     .edgesIgnoringSafeArea(.all)
     }
 }
 
 #Preview {
-    FoodOGMap2()
+    ShoppingDirections()
 }

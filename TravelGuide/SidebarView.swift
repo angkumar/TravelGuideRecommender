@@ -12,6 +12,7 @@ struct SidebarView: View {
         @State private var homeExpanded = false
         @State private var profileExpanded = false
         @State private var settingsExpanded = false
+        @State private var locationsExpanded = false
         
         var body: some View {
             List {
@@ -43,6 +44,14 @@ struct SidebarView: View {
                     }
                     NavigationLink(destination: MainOptions()) {
                         Label("Privacy", systemImage: "lock.shield")
+                    }
+                }
+                DisclosureGroup("Locations", isExpanded: $locationsExpanded) {
+                    NavigationLink(destination: MainOptions()) {
+                        Label("General Spots", systemImage: "gearshape")
+                    }
+                    NavigationLink(destination: LocationTracker()) {
+                        Label("Where u at???", systemImage: "map")
                     }
                 }
             }

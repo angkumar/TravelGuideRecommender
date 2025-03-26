@@ -40,7 +40,7 @@ struct FoodOG: View {
                 .cornerRadius(20)
                 .mapStyle(.hybrid)
                 
-                NavigationLink(destination: FoodOGMap().edgesIgnoringSafeArea(.all)) {
+                NavigationLink(destination: FoodOGMap2().edgesIgnoringSafeArea(.all)) {
                     Text("Click here for directions.")
                         .fontWeight(.heavy)
                         .font(.title3)

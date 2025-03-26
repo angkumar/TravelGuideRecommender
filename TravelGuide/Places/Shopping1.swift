@@ -35,7 +35,7 @@ struct Shopping1: View {
                 
                 Text("Here you want all your favourite places, like your bed, bathroom, kitchen and so on.")
                 
-                NavigationLink(destination: ShoppingMap().edgesIgnoringSafeArea(.all)) {
+                NavigationLink(destination: ShoppingDirections().edgesIgnoringSafeArea(.all)) {
                     Text("Click here for directions.")
                         .fontWeight(.heavy)
                         .font(.title3)
