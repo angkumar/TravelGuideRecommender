@@ -11,6 +11,7 @@ import MapKit
 struct MainMap: View {
     
     @State private var route: MKRoute?
+    @ObservedObject var locationManager: LocationManager
     var body: some View {
         Map() {
             Marker("Olive Garden", coordinate: CLLocationCoordinate2D(latitude: 42.4851700905243, longitude: -83.4741130123747))
@@ -22,6 +23,7 @@ struct MainMap: View {
             Marker("Twelve Oaks Mall", coordinate: CLLocationCoordinate2D(latitude: 42.49188857396703, longitude: -83.47064573617806))
             
             Marker("Suburban Collection Showplace", coordinate: CLLocationCoordinate2D(latitude: 42.489293731285684, longitude: -83.50238818400035))
+            Marker("Me", coordinate: CLLocationCoordinate2D(latitude: locationManager.latitude, longitude: locationManager.longitude))
                 
             
             
@@ -38,5 +40,5 @@ struct MainMap: View {
 }
 
 #Preview {
-    MainMap()
+    MainMap(locationManager: LocationManager())
 }

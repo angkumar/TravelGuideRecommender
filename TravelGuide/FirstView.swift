@@ -14,7 +14,7 @@ struct FirstView: View {
                 .tabItem {
                     Label("Main", systemImage: "house")
                 }
-            MainMap()
+            MainMap(locationManager: LocationManager())
                 .tabItem {
                     Label("Whole Map", systemImage: "map")
                 }

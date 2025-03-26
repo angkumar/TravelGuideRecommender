@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Map2: View {
     var body: some View {
-        MapPolylineView()
+        MapPolylineView(locationManager: LocationManager())
             .edgesIgnoringSafeArea(.all)
     }
 }

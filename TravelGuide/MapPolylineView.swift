@@ -2,6 +2,7 @@ import SwiftUI
 import MapKit
 
 struct MapPolylineView: UIViewRepresentable {
+    @ObservedObject var locationManager: LocationManager
     class Coordinator: NSObject, MKMapViewDelegate {
         var parent: MapPolylineView
         
@@ -34,6 +35,7 @@ struct MapPolylineView: UIViewRepresentable {
         let startCoordinate = CLLocationCoordinate2D(latitude: 42.485984063745754, longitude: -83.53735398714915) // Home
         let endCoordinate = CLLocationCoordinate2D(latitude: 42.48180223947649, longitude: -83.47077933339779) // Walmart
         let endCoordinate2 = CLLocationCoordinate2D(latitude: 40.74844079761186, longitude: -73.98569849282397)
+        let me = CLLocationCoordinate2D(latitude: locationManager.latitude, longitude: locationManager.longitude)
         
         // Add markers (annotations)
         let locations = [
@@ -42,6 +44,7 @@ struct MapPolylineView: UIViewRepresentable {
             ("Walmart", endCoordinate),
             ("Twelve Oaks Mall", CLLocationCoordinate2D(latitude: 42.49188857396703, longitude: -83.47064573617806)),
             ("Empire State Building", endCoordinate2)
+            
         ]
         
         for location in locations {
