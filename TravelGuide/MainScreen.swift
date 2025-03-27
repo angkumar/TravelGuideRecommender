@@ -13,6 +13,7 @@ struct MainScreen: View {
     @State private var navigateToThirdPage = false
     @State private var navigateToFourthPage = false
     @State private var navigateToFifthPage = false
+    @State private var navigateToSixthPage = false
     
     var body: some View {
         NavigationView {
@@ -93,10 +94,26 @@ struct MainScreen: View {
                     .navigationDestination(isPresented: $navigateToFifthPage) {
                         Shopping2()
                     }
-                    
-                    
-                    
-                    
+                    VStack{
+                        Text("Fun")
+                            .font(.title)
+                            .padding()
+                        
+                        Button(action: {
+                            navigateToSixthPage = true
+                        }) {
+                            Text("Fun")
+                                .padding()
+                                .background(Color.blue)
+                                .foregroundColor(.white)
+                                .clipShape(Capsule())
+                                .shadow(radius: 5)
+                        }
+                    }
+                    .navigationTitle("Things to do in Novi!")
+                    .navigationDestination(isPresented: $navigateToSixthPage) {
+                        fun()
+                    }
                 }
             }
         }
