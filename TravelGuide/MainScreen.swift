@@ -28,7 +28,7 @@ struct MainScreen: View {
                         .cornerRadius(20)
                         .frame(width: 400, height: 350)
                     
-                    Text("Where do you want to go?")
+                    Text("Where do you want to go in Novi?")
                         .font(.largeTitle)
                     
                     DisclosureGroup("Home", isExpanded: $homeExpanded) {
@@ -98,7 +98,7 @@ struct MainScreen: View {
             //                        }
             //                    }
             //                    .navigationTitle("Things to do in Novi!")
-            //                    .navigationDestination(isPresented: $navigateToThirdPage) {
+            //
             //                        FoodOG()
             //
             //
