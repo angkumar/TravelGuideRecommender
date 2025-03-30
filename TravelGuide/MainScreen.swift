@@ -53,7 +53,7 @@ struct MainScreen: View {
                     }
                     
                     DisclosureGroup("Fun", isExpanded: $funExpanded) {
-                        NavigationLink(destination: fun3()) {
+                        NavigationLink(destination: fun()) {
                             Label("Click for fun", systemImage: "gamecontroller.fill")
                         }
                     }
