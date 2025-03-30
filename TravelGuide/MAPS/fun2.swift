@@ -37,6 +37,7 @@ struct fun2: UIViewRepresentable {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
         mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
         return mapView
     }
     
@@ -76,7 +77,7 @@ struct fun2: UIViewRepresentable {
         let directions = MKDirections(request: request)
         directions.calculate { response, error in
             guard let route = response?.routes.first else {
-                print("Error calculating route: \(error?.localizedDescription))")
+                print("Error calculating route: \(error?.localizedDescription ?? "Unknown error")")
                 return
             }
             

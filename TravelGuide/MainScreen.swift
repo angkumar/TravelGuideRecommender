@@ -18,6 +18,7 @@ struct MainScreen: View {
     @State private var eatExpanded = false
     @State private var shoppingExpanded = false
     @State private var funExpanded = false
+    @State private var schoolExpanded = false
     
     var body: some View {
         
@@ -34,6 +35,12 @@ struct MainScreen: View {
                     DisclosureGroup("Home", isExpanded: $homeExpanded) {
                         NavigationLink(destination: Home()) {
                             Label("Take me home", systemImage: "house.fill")
+                        }
+                    }
+                    
+                    DisclosureGroup("School", isExpanded: $schoolExpanded) {
+                        NavigationLink(destination: School()) {
+                            Label("School", systemImage: "graduationcap.fill")
                         }
                     }
                     

@@ -1,21 +1,21 @@
 //
-//  ShoppingMap.swift
+//  school1.swift
 //  TravelGuide
 //
-//  Created by Angad Kumar on 3/22/25.
+//  Created by Angad Kumar on 3/30/25.
 //
 
 import SwiftUI
 import MapKit
 
-struct ShoppingMap: UIViewRepresentable {
+struct school1: UIViewRepresentable {
     @ObservedObject var locationManager: LocationManager
     @State private var hasRouteDrawn = false  // Track if route is drawn
-
+    
     class Coordinator: NSObject, MKMapViewDelegate {
-        var parent: ShoppingMap
+        var parent: school1
         
-        init(parent: ShoppingMap) {
+        init(parent: school1) {
             self.parent = parent
         }
         
@@ -49,7 +49,7 @@ struct ShoppingMap: UIViewRepresentable {
         }
         
         let startCoordinate = CLLocationCoordinate2D(latitude: locationManager.latitude, longitude: locationManager.longitude)
-        let endCoordinate = CLLocationCoordinate2D(latitude: 42.48180223947649, longitude: -83.47077933339779) // Destination
+        let endCoordinate = CLLocationCoordinate2D(latitude: 42.46348341931742, longitude:  -83.49242852247214)
         
         let region = MKCoordinateRegion(center: startCoordinate, latitudinalMeters: 125, longitudinalMeters: 125)
                 mapView.setRegion(region, animated: true)
@@ -63,7 +63,7 @@ struct ShoppingMap: UIViewRepresentable {
         
         // Add new markers (annotations)
         let locations = [
-            ("WalMart", endCoordinate),
+            ("School", endCoordinate),
             ("Home", startCoordinate),
         ]
         

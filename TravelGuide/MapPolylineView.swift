@@ -43,7 +43,9 @@ struct MapPolylineView: UIViewRepresentable {
             ("Home", startCoordinate),
             ("Walmart", endCoordinate),
             ("Twelve Oaks Mall", CLLocationCoordinate2D(latitude: 42.49188857396703, longitude: -83.47064573617806)),
-            ("Empire State Building", endCoordinate2)
+            ("Empire State Building", endCoordinate2),
+            ("me", me),
+            ("School", coordinate: CLLocationCoordinate2D(latitude: 42.46348341931742, longitude:  -83.49242852247214))
             
         ]
         

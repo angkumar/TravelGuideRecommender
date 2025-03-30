@@ -10,6 +10,7 @@ import MapKit
 
 struct ShoppingMap2: UIViewRepresentable {
     @ObservedObject var locationManager: LocationManager  // Use an external instance
+    @State private var hasRouteDrawn = false
     
     class Coordinator: NSObject, MKMapViewDelegate {
         var parent: ShoppingMap2
@@ -37,6 +38,7 @@ struct ShoppingMap2: UIViewRepresentable {
         let mapView = MKMapView()
         mapView.delegate = context.coordinator
         mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
         return mapView
     }
     
@@ -49,6 +51,11 @@ struct ShoppingMap2: UIViewRepresentable {
         
         let startCoordinate = CLLocationCoordinate2D(latitude: locationManager.latitude, longitude: locationManager.longitude)
         let endCoordinate = CLLocationCoordinate2D(latitude: 42.49188857396703, longitude: -83.47064573617806) // Destination
+        
+        let region = MKCoordinateRegion(center: startCoordinate, latitudinalMeters: 125, longitudinalMeters: 125)
+                mapView.setRegion(region, animated: true)
+        
+        if hasRouteDrawn { return }
         
         // Remove old overlays and annotations
         mapView.removeOverlays(mapView.overlays)
@@ -76,14 +83,15 @@ struct ShoppingMap2: UIViewRepresentable {
         let directions = MKDirections(request: request)
         directions.calculate { response, error in
             guard let route = response?.routes.first else {
-                print("Error calculating route: \(error?.localizedDescription))")
+                print("Error calculating route: \(error?.localizedDescription ?? "Unknown error")")
                 return
             }
             
             mapView.addOverlay(route.polyline)
+            hasRouteDrawn = true
             
             // Adjust map region to fit the route
             mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50), animated: true)
+            }
         }
     }
-}
