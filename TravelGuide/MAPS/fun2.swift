@@ -56,7 +56,7 @@ struct fun2: UIViewRepresentable {
         
         // Add new markers (annotations)
         let locations = [
-            ("WalMart", endCoordinate),
+            ("Empire State Building", endCoordinate),
             ("Home", startCoordinate),
         ]
         
