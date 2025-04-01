@@ -5,10 +5,12 @@ struct PromoSliderView: View {
     @State private var eat = false
     @State private var shopping = false
     @State private var shoppingA = false
+    @State private var school = false
     private let promotions: [Promotion] = [
         Promotion(imageName: "Food2", title: "Olive Garden", subtitle: "Novi's Favorite Italian Restaurant", buttonText: "View Now"),
         Promotion(imageName: "wm", title: "Shopping", subtitle: "Novi is home to multiple shopping malls", buttonText: "Go Now"),
-        Promotion(imageName: "tom", title: "The Rich Only", subtitle: "The biggest shopping mall in the state", buttonText: "Discover More")
+        Promotion(imageName: "tom", title: "The Rich Only", subtitle: "The biggest shopping mall in the state", buttonText: "Discover More"),
+        Promotion(imageName: "school1", title: "The Students Only", subtitle: "The best school in the region", buttonText: "Enroll Now")
     ]
     
     var body: some View {
@@ -77,8 +79,10 @@ struct PromoSliderView: View {
             eat = true
         } else if promo.buttonText == "Shop Now" {
             shopping = true
-        } else {
+        } else if promo.buttonText == "Discover More"{
             shoppingA = true
+        } else {
+            school = true
         }
     }
 }
