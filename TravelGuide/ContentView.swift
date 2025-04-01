@@ -16,7 +16,10 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Things to do in Novi")
+                Text("Welcome to...")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                Text("NOVI")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 Button(action: {
