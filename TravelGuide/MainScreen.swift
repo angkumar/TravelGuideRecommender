@@ -48,6 +48,9 @@ struct MainScreen: View {
                         NavigationLink(destination: FoodOG()) {
                             Label("I want Italian", systemImage: "wineglass")
                         }
+                        NavigationLink(destination: foodH()) {
+                            Label("Hibatchi", systemImage: "flame")
+                        }
                     }
                     
                     DisclosureGroup("Shopping", isExpanded: $shoppingExpanded) {

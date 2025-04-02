@@ -44,7 +44,7 @@ struct foodH: View {
                 .cornerRadius(20)
                 .mapStyle(.hybrid)
                 
-                NavigationLink(destination: FoodOGMap2().edgesIgnoringSafeArea(.all)) {
+                NavigationLink(destination: wadirections().edgesIgnoringSafeArea(.all)) {
                     Text("Click here for directions to wasabi")
                         .fontWeight(.heavy)
                         .font(.title3)
