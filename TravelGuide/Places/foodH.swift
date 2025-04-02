@@ -63,6 +63,17 @@ struct foodH: View {
                 .frame(width: 400, height: 300)
                 .cornerRadius(20)
                 .mapStyle(.hybrid)
+                
+                NavigationLink(destination: B1Directions().edgesIgnoringSafeArea(.all)) {
+                    Text("Click here for directions to Benihana")
+                        .fontWeight(.heavy)
+                        .font(.title3)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(LinearGradient(gradient: Gradient(colors: [.pink, .purple]), startPoint: .leading, endPoint: .trailing))
+                        .cornerRadius(40)
+                }
             }
         }
     }
