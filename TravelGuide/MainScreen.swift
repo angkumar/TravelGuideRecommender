@@ -27,10 +27,9 @@ struct MainScreen: View {
 
                 List {
                     
-                    RoundedRectangle(cornerRadius: 0)
-                        .frame(width: .infinity, height: 100)
-                        .foregroundColor(.gray)
-                        .edgesIgnoringSafeArea(.all)
+                    PromoSliderView()
+                        .frame(width: 400, height: 350)
+                        .cornerRadius(20)
                     
                     Text("Where do you want to go in Novi?")
                         .font(.largeTitle)

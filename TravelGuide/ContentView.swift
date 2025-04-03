@@ -48,7 +48,7 @@ struct ContentView: View {
                 
                 if(userName == "Hello" && password == "Password") {
                     NavigationLink(destination: FirstView().edgesIgnoringSafeArea(.all)) {
-                        Text("Click here for directions to Benihana")
+                        Text("Click here to enter the experience")
                             .fontWeight(.heavy)
                             .font(.title3)
                             .frame(maxWidth: .infinity)
@@ -57,7 +57,7 @@ struct ContentView: View {
                             .background(LinearGradient(gradient: Gradient(colors: [.pink, .purple]), startPoint: .leading, endPoint: .trailing))
                             .cornerRadius(40)
                     }
-                    .offset(y: -100)
+                    .offset(y: -200)
                 }
             }
         }
