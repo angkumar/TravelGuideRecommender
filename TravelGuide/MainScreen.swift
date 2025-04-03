@@ -70,7 +70,7 @@ struct MainScreen: View {
                         }
                     }
                 }
-                .listStyle(GroupedListStyle()) // Better for iOS UI
+                .listStyle(InsetGroupedListStyle()) // Better for iOS UI
             }
             .navigationTitle("Things to do in Novi!")
             //                        Text("Go Home")
