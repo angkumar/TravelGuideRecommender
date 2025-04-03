@@ -24,10 +24,13 @@ struct MainScreen: View {
         
         NavigationStack {
             VStack {
+
                 List {
-                    PromoSliderView()
-                        .cornerRadius(20)
-                        .frame(width: 400, height: 350)
+                    
+                    RoundedRectangle(cornerRadius: 0)
+                        .frame(width: .infinity, height: 100)
+                        .foregroundColor(.gray)
+                        .edgesIgnoringSafeArea(.all)
                     
                     Text("Where do you want to go in Novi?")
                         .font(.largeTitle)
@@ -68,8 +71,7 @@ struct MainScreen: View {
                         }
                     }
                 }
-                .listStyle(InsetGroupedListStyle()) // Better for iOS UI
-                .frame(width: .infinity, height: .infinity)
+                .listStyle(GroupedListStyle()) // Better for iOS UI
             }
             .navigationTitle("Things to do in Novi!")
             //                        Text("Go Home")
