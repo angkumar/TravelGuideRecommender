@@ -31,7 +31,7 @@ struct MainScreen: View {
                         .frame(width: 400, height: 350)
                         .cornerRadius(20)
                     
-                    Text("Where do you want to go in Novi?")
+                    Text("Where do you want to go??")
                         .font(.largeTitle)
                     
                     DisclosureGroup("Home", isExpanded: $homeExpanded) {
