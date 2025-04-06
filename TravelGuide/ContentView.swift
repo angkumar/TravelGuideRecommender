@@ -45,7 +45,7 @@ struct ContentView: View {
                     InputFieldView(data: $userName, title: "Username:")
                     SecureFieldView(data: $password, title: "Password")
                 }
-                .frame(width: 400, height: 180)
+                .frame(width: 390, height: 180)
                 .offset(y: -200)// ✅ Use NavigationStack (iOS 16+)
                             VStack(spacing: 24) {
                                 Button {
