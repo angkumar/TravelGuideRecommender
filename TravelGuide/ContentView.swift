@@ -48,7 +48,7 @@ struct ContentView: View {
                 
                 if(userName == "Hello" && password == "Password") {
                     NavigationLink(destination: FirstView().edgesIgnoringSafeArea(.all)) {
-                        Text("Click here to enter the experience")
+                        Text("Welcome")
                             .fontWeight(.heavy)
                             .font(.title3)
                             .frame(maxWidth: .infinity)
