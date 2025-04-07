@@ -25,6 +25,7 @@ struct ContentView: View {
                         .cornerRadius(40)
                         .rotationEffect(Angle(degrees: 15))
                     
+                  
                     
                     VStack{
                         Text("Travel Guide")

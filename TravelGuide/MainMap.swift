@@ -22,7 +22,7 @@ struct MainMap: View {
             
             Marker("Twelve Oaks Mall", coordinate: CLLocationCoordinate2D(latitude: 42.49188857396703, longitude: -83.47064573617806))
             
-            Marker("Suburban Collection Showplace", coordinate: CLLocationCoordinate2D(latitude: 42.489293731285684, longitude: -83.50238818400035))
+            Marker("Suburban Showplace", coordinate: CLLocationCoordinate2D(latitude: 42.489293731285684, longitude: -83.50238818400035))
             Marker("Me", coordinate: CLLocationCoordinate2D(latitude: locationManager.latitude, longitude: locationManager.longitude))
             Marker("School", coordinate: CLLocationCoordinate2D(latitude: 42.46348341931742, longitude:  -83.49242852247214))
                 
