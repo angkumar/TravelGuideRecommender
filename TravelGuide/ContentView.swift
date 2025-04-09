@@ -41,7 +41,7 @@ struct ContentView: View {
                 .offset(y: -250)
                 
                 VStack {
-                    Text("Log in")
+                    Text("Welcome")
                         .font(.largeTitle)
                     InputFieldView(data: $userName, title: "Username or email:")
                     SecureFieldView(data: $password, title: "Password")
