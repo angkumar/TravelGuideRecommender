@@ -43,14 +43,14 @@ struct ContentView: View {
                 VStack {
                     Text("Log in")
                         .font(.largeTitle)
-                    InputFieldView(data: $userName, title: "Username:")
+                    InputFieldView(data: $userName, title: "Username or email:")
                     SecureFieldView(data: $password, title: "Password")
                 }
                 .frame(width: 390, height: 180)
                 .offset(y: -200)// ✅ Use NavigationStack (iOS 16+)
                             VStack(spacing: 24) {
                                 Button {
-                                    if userName == "Hello" && password == "Password" {
+                                    if userName == "angkumar787@gmail.com" && password == "Password" {
                                         isLoggedIn = true
                                     }
                                 } label: {
