@@ -28,7 +28,7 @@ struct ContentView: View {
                   
                     
                     VStack{
-                        Text("Travel Guide")
+                        Text("TravelGuide")
                             .font(.system(size: 60, weight: .bold, design: .default))
                             .foregroundColor(.white)
                         Text("Discover the world")
