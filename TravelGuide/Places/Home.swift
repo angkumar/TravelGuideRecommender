@@ -17,7 +17,7 @@ struct Home: View {
                     .font(.largeTitle)
                     .padding()
                 
-                Text("This is the place you call home. Home is where friends and family are at.")
+                Text("This is the place you call home. Home is where friends and family are at. Home is home.")
                 
                 Image("home")
                     .resizable()
