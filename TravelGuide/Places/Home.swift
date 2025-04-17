@@ -32,7 +32,7 @@ struct Home: View {
                 .cornerRadius(20)
                 .mapStyle(.hybrid)
                 
-                Text("Here you want all your favourite places, like your bed, bathroom, kitchen and so on.")
+                Text("Here you want all your favourite places, like your bed, bathroom, kitchen, etc")
                 
                 NavigationLink(destination: HomeDirections   ().edgesIgnoringSafeArea(.all)) {
                     Text("Click here for directions.(Only if you are outside)")
