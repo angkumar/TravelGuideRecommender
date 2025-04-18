@@ -13,7 +13,7 @@ struct Home: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                Text("Home")
+                Text("Your Home")
                     .font(.largeTitle)
                     .padding()
                 
