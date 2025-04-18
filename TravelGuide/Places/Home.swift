@@ -35,7 +35,7 @@ struct Home: View {
                 Text("Here you want all your favourite places, like your bed, bathroom, kitchen, etc")
                 
                 NavigationLink(destination: HomeDirections   ().edgesIgnoringSafeArea(.all)) {
-                    Text("Click here for directions.(Only if you are outside)")
+                    Text("Click here for directions.(If you are outside)")
                         .fontWeight(.heavy)
                         .font(.title3)
                         .frame(maxWidth: .infinity)
