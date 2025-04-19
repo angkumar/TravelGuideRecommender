@@ -8,9 +8,9 @@ struct PromoSliderView: View {
     @State private var school = false
     private let promotions: [Promotion] = [
         Promotion(imageName: "Food2", title: "Olive Garden", subtitle: "Novi's Favorite Italian Restaurant", buttonText: "View Now"),
-        Promotion(imageName: "wm", title: "Shopping", subtitle: "Novi is home to multiple shopping malls", buttonText: "Go Now"),
-        Promotion(imageName: "tom", title: "The Rich Only", subtitle: "The biggest shopping mall in the state", buttonText: "Discover More"),
-        Promotion(imageName: "school1", title: "The Students Only", subtitle: "The best school in the region", buttonText: "Enroll Now")
+        Promotion(imageName: "wm", title: "Shopping", subtitle: "multiple shopping malls", buttonText: "Go Now"),
+        Promotion(imageName: "tom", title: "The Rich Only", subtitle: "The biggest shopping mall", buttonText: "Discover More"),
+        Promotion(imageName: "school1", title: "The Students Only", subtitle: "The best school", buttonText: "Enroll Now")
     ]
     
     var body: some View {

@@ -29,7 +29,7 @@ struct MainScreen: View {
                     
                     PromoSliderView()
                         .frame(width: 400, height: 350)
-                        .cornerRadius(20)
+                        .cornerRadius(5)
                     
                     Text("Where do you want to go??")
                         .font(.largeTitle)
@@ -70,7 +70,7 @@ struct MainScreen: View {
                         }
                     }
                 }
-                .listStyle(InsetGroupedListStyle()) // Better for iOS UI
+                .listStyle(InsetListStyle()) // Better for iOS UI
             }
             .navigationTitle("Things to do in Novi!")
             //                        Text("Go Home")

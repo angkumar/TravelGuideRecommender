@@ -47,8 +47,8 @@ struct SidebarView: View {
                     }
                 }
                 DisclosureGroup("Locations", isExpanded: $locationsExpanded) {
-                    NavigationLink(destination: MainOptions()) {
-                        Label("General Spots", systemImage: "gearshape")
+                    NavigationLink(destination: MainMap(locationManager: LocationManager())) {
+                        Label("General Spots", systemImage: "location")
                     }
                     NavigationLink(destination: LocationTracker()) {
                         Label("Where u at???", systemImage: "map")

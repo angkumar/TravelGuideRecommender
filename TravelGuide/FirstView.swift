@@ -18,18 +18,18 @@ struct FirstView: View {
                 .tabItem {
                     Label("Whole Map", systemImage: "map")
                 }
-            Map2()
-                .tabItem {
-                    Label("Test", systemImage: "map")
-                }
+//            Map2()
+//                .tabItem {
+//                    Label("Test", systemImage: "map")
+//                }
             Options()
                 .tabItem {
                     Label("Options", systemImage: "gear")
                 }
-            LocationTracker()
-                .tabItem {
-                    Label("Location Tracker", systemImage: "location")
-                }
+//            LocationTracker()
+//                .tabItem {
+//                    Label("Location Tracker", systemImage: "location")
+//                }
         }
     }
 }
