@@ -18,7 +18,7 @@ struct fun: View {
                 
                 Text("This is the place you call home")
                 
-                Image("home")
+                Image("Empire state building")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(20)
