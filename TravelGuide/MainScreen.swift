@@ -31,8 +31,12 @@ struct MainScreen: View {
                         .frame(width: 400, height: 350)
                         .cornerRadius(5)
                     
-                    Text("Where do you want to go??")
+                    Text("Where is your Destination?")
                         .font(.largeTitle)
+                    Text("Tip: follow your heart")
+                        .font(.subheadline)
+
+                    
                     
                     DisclosureGroup("Home", isExpanded: $homeExpanded) {
                         NavigationLink(destination: Home()) {
